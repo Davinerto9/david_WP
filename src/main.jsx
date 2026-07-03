@@ -1,10 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import MainPage from './pages/MainPage'
-import DrawingCanvas from './pages/DrawingCanvas'
+import App from './App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MainPage/>
+    <App/>
   </StrictMode>,
 )
