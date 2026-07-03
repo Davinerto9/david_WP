@@ -38,6 +38,19 @@ jobs:
           ls -la dist
           test -f dist/index.html
 
+      - name: Verify dist contents (diagnostics)
+        run: |
+          echo "=== dist root ==="
+          ls -la dist || true
+          echo "=== recursive sizes ==="
+          du -h --max-depth=3 dist || true
+          echo "=== find file types (symlinks) ==="
+          find dist -type l -ls || true
+          echo "=== detailed file list ==="
+          find dist -type f -maxdepth 5 -exec ls -lh {} \; || true
+          echo "=== index.html head ==="
+          if [ -f dist/index.html ]; then head -n 20 dist/index.html; else echo "ERROR: dist/index.html not found"; exit 1; fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
