@@ -10,6 +10,7 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import GameCard from "../components/GameCard"
 
 //I dont know if it's correct to put Tech stack is toooooo much corporate crap, projects I think should stay...
 //Things in mind: Goku addition, wild effects, music, a super advanced NON corporate dashboard, something creative with transitions and stuff...
@@ -94,7 +95,7 @@ export default function MainPage(){
                     variant="h4" 
                     align="center" 
                     sx={{
-                        fontFamily: 'Consolas', 
+                        fontFamily: 'Inconsolata', 
                         mt: 4,
                         fontWeight: 'bold',
                         display: 'inline-block',
@@ -114,22 +115,22 @@ export default function MainPage(){
                 >
                     {displayedText}
                 </Typography>
-                <Typography id="me" variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                <Typography id="me" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 600}}>
                     Who am I?:
                 </Typography> 
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)' }}>
-                    <Typography align="center"  sx={{fontFamily: 'Consolas', fontStyle: 'italic'}}>
+                    <Typography align="center"  sx={{fontFamily: 'Inconsolata', fontStyle: 'italic', fontWeight: 600}}>
                         I am David, I am 21 years old and I am currently 3rd year of Computer Science as of now. This webpage represents who I am and what I have to offer, If you want to find out keep scrolling to know in depth!
                         {/*qualities should go here but how do I put it here ??????? */}
                     </Typography>
                 </Card>
-                <Typography id="inspirations" variant="h5" align="left" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                <Typography id="inspirations" variant="h5" align="left" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
                     My inspirations:
                 </Typography>
                 <Typography id="hobbies" variant="h5" align="right" sx={{scrollMarginTop: '100px'}}>
                     My hobbies:
                 </Typography>
-                <Typography id="videoGames" variant="h5" align="left" sx={{fontFamily: 'Consolas',scrollMarginTop: '100px'}}>
+                <Typography id="videoGames" variant="h5" align="left" sx={{fontFamily: 'Inconsolata',scrollMarginTop: '100px', fontWeight: 'bold'}}>
                     My favorite games: 
                 </Typography>
                 <Box sx={{
@@ -143,18 +144,43 @@ export default function MainPage(){
                 }}>
                     {videogames.map((videogame, i) =>{
                         const offset = i -index
+
+                        return(
+                            <Box
+                                key={videogame.id}
+                                sx={{
+                                position: "absolute",
+                                width: 280,
+                                
+                                transition: "0.5s ease",
+                                transformStyle: "preserve-3d",
+
+                                // transform: `
+                                //     translateX(${offset * 160}px)
+                                //     scale(${i === index ? 1 : 0.75})
+                                //     rotateY(${offset * 35}deg)
+                                // `,
+
+                                opacity: Math.abs(offset) > 3 ? 0 : 1,
+                                zIndex: i === index ? 10 : 5 - Math.abs(offset),
+                                filter: i === index ? "none" : "brightness(0.6)",
+                                }}
+                            >
+                                <GameCard key={i} videogame={videogame}/>
+                            </Box>
+                        )
                     })}
                         
                     <IconButton
                         onClick={prev}
-                        sx={{ position: "absolute", left: 100, color: "white" }}
+                        sx={{ position: "absolute", left: 20, color: "white" }}
                     >
                         <ArrowBackIcon />
                     </IconButton>
 
                     <IconButton
                         onClick={next}
-                        sx={{ position: "absolute", right: 100, color: "white" }}
+                        sx={{ position: "absolute", right: 20, color: "white" }}
                     >
                         <ArrowForwardIcon />
                     </IconButton>
@@ -162,7 +188,7 @@ export default function MainPage(){
                 <Typography id="music" variant="h5" align="right" sx={{fontFamily:'Montserrat, sans-serif', fontWeight: 800, scrollMarginTop: '100px'}}>
                     My music Taste: 
                 </Typography>
-                <Typography id="projects" variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                <Typography id="projects" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
                     Some Software Projects I am proud of designing/participating:
                 </Typography>
                 
@@ -180,7 +206,7 @@ export default function MainPage(){
                     {/*I think I can map the list of projects in here and display correctly with some CSS rules, hardcoded list */}
                 </Box>
 
-                <Typography variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                <Typography variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
                     Contact Me and links!:
                 </Typography> 
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
