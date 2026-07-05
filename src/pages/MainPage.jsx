@@ -1,31 +1,24 @@
-import { Container, Typography, Box, Card, Toolbar, GlobalStyles, CssBaseline } from "@mui/material"
+import { Container, Typography, Box, Card, Toolbar, GlobalStyles, CssBaseline, IconButton } from "@mui/material"
 import React from "react"
 import { useState, useEffect } from "react"
 import Navbar from "../components/Navbar"
 import ProjectCard from "../components/ProjectCard"
+import { projects, hobbies, videogames, qualities, musicTaste, inspirations } from "../utils/data"
+import LinkedInIcon from '@mui/icons-material/LinkedIn'; 
+import MailIcon from '@mui/icons-material/Mail';
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 //I dont know if it's correct to put Tech stack is toooooo much corporate crap, projects I think should stay...
 //Things in mind: Goku addition, wild effects, music, a super advanced NON corporate dashboard, something creative with transitions and stuff...
 
 export default function MainPage(){
 
-    const projects =[
-        {
-            name: "jhonny",
-            description: "jhonnny2",
-            imgSource: "done",
-            urlSource: "https://www.dokkandb.com"
-        },
-        {
-            name: "jhonny",
-            description: "jhonnny3",
-            imgSource: "done",
-            urlSource: "https://www.dokkandb.com"
-        }
-    ]
-
     const fullText = "Hello this is David!";
     const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         setDisplayedText("");
@@ -44,12 +37,20 @@ export default function MainPage(){
         return () => clearInterval(typingInterval); 
     }, []);
 
+    const next = () => {
+        setIndex((prev) => (prev + 1) % videogames.length);
+    };
+
+    const prev = () => {
+        setIndex((prev) => (prev - 1 + videogames.length) % videogames.length);
+    };
+
     return(
         <>
             {/* Limpia márgenes ocultos y estilos nativos del navegador */}
             <CssBaseline />
 
-            {/* Inyección de la animación del degradado a nivel global */}
+            {/* animation injection globally*/}
             <GlobalStyles
                 styles={{
                     '@keyframes gradientMovement': {
@@ -62,6 +63,14 @@ export default function MainPage(){
                         padding: 0,
                         width: '100%',
                         minHeight: '100vh',
+                        overflowX: 'hidden', //no more horizontal leak
+                        '&::-webkit-scrollbar': {
+                            display: 'none',
+                        },
+                        // Hide scrollbar for IE and Edge
+                        msOverflowStyle: 'none', 
+                        // Hide scrollbar for Firefox
+                        scrollbarWidth: 'none', 
                     },
                 }}
             />
@@ -92,7 +101,7 @@ export default function MainPage(){
                         width: '100%',
                         // Añade una barra parpadeante al final del texto imitando una terminal
                         '&::after': {
-                            content: '"|"',
+                            content: '":)"',
                             animation: 'blink 0.8s infinite',
                             marginLeft: '4px',
                             color: '#83afed'
@@ -105,14 +114,56 @@ export default function MainPage(){
                 >
                     {displayedText}
                 </Typography>
-                <Typography variant="h5" align="center" sx={{fontFamily: 'Consolas'}}>
-                    My Tech Stack:
+                <Typography id="me" variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                    Who am I?:
                 </Typography> 
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)' }}>
-                    {/* Contenido del Tech Stack */}
+                    <Typography align="center"  sx={{fontFamily: 'Consolas', fontStyle: 'italic'}}>
+                        I am David, I am 21 years old and I am currently 3rd year of Computer Science as of now. This webpage represents who I am and what I have to offer, If you want to find out keep scrolling to know in depth!
+                        {/*qualities should go here but how do I put it here ??????? */}
+                    </Typography>
                 </Card>
-                <Typography variant="h5" align="center" sx={{fontFamily: 'Consolas'}}>
-                    My Projects
+                <Typography id="inspirations" variant="h5" align="left" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                    My inspirations:
+                </Typography>
+                <Typography id="hobbies" variant="h5" align="right" sx={{scrollMarginTop: '100px'}}>
+                    My hobbies:
+                </Typography>
+                <Typography id="videoGames" variant="h5" align="left" sx={{fontFamily: 'Consolas',scrollMarginTop: '100px'}}>
+                    My favorite games: 
+                </Typography>
+                <Box sx={{
+                    position: "relative",
+                    height: 500,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    perspective: "1200px",
+                    overflow: "hidden",
+                }}>
+                    {videogames.map((videogame, i) =>{
+                        const offset = i -index
+                    })}
+                        
+                    <IconButton
+                        onClick={prev}
+                        sx={{ position: "absolute", left: 100, color: "white" }}
+                    >
+                        <ArrowBackIcon />
+                    </IconButton>
+
+                    <IconButton
+                        onClick={next}
+                        sx={{ position: "absolute", right: 100, color: "white" }}
+                    >
+                        <ArrowForwardIcon />
+                    </IconButton>
+                </Box>
+                <Typography id="music" variant="h5" align="right" sx={{fontFamily:'Montserrat, sans-serif', fontWeight: 800, scrollMarginTop: '100px'}}>
+                    My music Taste: 
+                </Typography>
+                <Typography id="projects" variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                    Some Software Projects I am proud of designing/participating:
                 </Typography>
                 
                 
@@ -126,8 +177,42 @@ export default function MainPage(){
                             urlSource={project.urlSource}
                         />
                     ))}
-                    {/*I think I can map the list of projects in here and display correctly with some CSS rules, the question is Hardcoded list? or API fetching*/}
+                    {/*I think I can map the list of projects in here and display correctly with some CSS rules, hardcoded list */}
                 </Box>
+
+                <Typography variant="h5" align="center" sx={{fontFamily: 'Consolas', scrollMarginTop: '100px'}}>
+                    Contact Me and links!:
+                </Typography> 
+                <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
+                    <IconButton component="a" target="blank" rel="noopener noreferrer" color="primary" href="https://www.linkedin.com/in/david-chicué-412475348/">
+                        <LinkedInIcon fontSize="large"/>
+                    </IconButton>
+                    
+                    <IconButton
+                        component="a"
+                        href="mailto:davinerto9@gmail.com"
+                    >
+                        <MailIcon fontSize="large" color="#000000" />
+                    </IconButton>
+                    <IconButton
+                        component="a"
+                        target="blank"
+                        rel="noopener noreferrer"
+                        href="https://steamcommunity.com/id/lorddavidwiii/"
+                    >
+                        <VideogameAssetIcon fontSize="large" color="#000000" />
+                    </IconButton>
+                    <IconButton
+                        component="a"
+                        target="blank"
+                        rel="noopener noreferrer"
+                        href="https://www.youtube.com/@printlnDavid"
+                    >
+                        <YouTubeIcon fontSize="large" color="#000000" />
+                    </IconButton>
+                </Card>
+
+                {/*Resume addition at the end (Maybe not very corporate)*/}
             </Container>
         </>
     )

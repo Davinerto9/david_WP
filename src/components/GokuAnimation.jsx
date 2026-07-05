@@ -45,13 +45,13 @@ function GokuAnimation({ onComplete }) {
   const blastAudio = useRef(null);
 
   const baseUrl = import.meta.env.BASE_URL || '/';
-  const gokuStill = `${baseUrl}goku-still.png`;
-  const gokuCharging = `${baseUrl}goku-charge.png`;
-  const gokuFiring = `${baseUrl}goku-firing.png`;
+  const gokuStill = `${baseUrl}/gokuAnimation/goku-still.png`;
+  const gokuCharging = `${baseUrl}/gokuAnimation/goku-charge.png`;
+  const gokuFiring = `${baseUrl}/gokuAnimation/goku-firing.png`;
 
-  const sfxCharge = `${baseUrl}kamehameha_charge.mp3`;
-  const sfxDrain = `${baseUrl}kamehameha_drain.mp3`;
-  const sfxBlast = `${baseUrl}kamehameha_blast.mp3`;
+  const sfxCharge = `${baseUrl}/gokuAnimation/kamehameha_charge.mp3`;
+  const sfxDrain = `${baseUrl}/gokuAnimation/kamehameha_drain.mp3`;
+  const sfxBlast = `${baseUrl}/gokuAnimation/kamehameha_blast.mp3`;
 
   useEffect(() => {
     chargeAudio.current = new Audio(sfxCharge);
