@@ -18,7 +18,7 @@ export const videogames = [
         name: "Dragon Ball Z Dokkan Battle",
         relevantData: [
         { label: "Completion", value: "The grind never STOPS" },
-        { label: "Power Level", value: "4,057,486" },
+        { label: "Power Level", value: "4,060,486" },
         { label: "Quote", value: "WE SAIYANS HAVE NO LIMITS!" },
         {
             label: "Favorite OSTs",
@@ -282,9 +282,9 @@ export const videogames = [
     //doom eternal, dragon ball z dokkan battle, batman arkham city, dark souls 3, bloodborne, elden ring, sonic unleashed, spiderman shattered dimensions, resident evil VII, re2, storm 4, lego city undercover, pokemon alpha sapphire, pokemon moon, yo-kai watch 2, sonic x shadow gen, sonic mania, half life, geometry dash, db xv2
     // for this I will use a Hover Card with like style referent to the game. The idea is a base component but with personalization props other than the actual data input props.
     //add like facts and corky crap for games like or image ref (dokkan: power level, fav card, friend code, ds3: gael and maintheme, doom eternal: rip and tear, bb: ludwig, batman ac: batman must save gotham, sonic unlashed: rooftop run spagonia, re7: magnum albert, storm 4: naruto vs sasuke, re2: leon vs mr.x, gd: deadlocked, half life: gordon vs combine, sonic mania: egg reverie, sonic x shadow: yellow chaos emerald cross, pkmn as: nationaldex, pkmn moon:ash greninja, db xv2: ultra villan vegeta, yk2: model zero watch, lego city: skin wheel)
-    //{Object.entries(game.relevantData).map(([key, value]) => (<Typography key={key}><strong>{key}:</strong> {value}</Typography>))}
 ]
 
+//MAYBE THIS IS NOT NECESSARY as an extra data set
 export const qualities = [
     {
 
@@ -296,16 +296,41 @@ export const qualities = [
 
 export const inspirations = [
     {
+        id: 1,
+        name: "Son Goku",
+        img: "inspirations/goku.jpg",
 
     }
     //yuji itadori, asta, son goku, subaru, future gohan, 
     // Personalized component that highlights the image layer with their most important quote in italics
+    // I dont fkning know what to put bruh
 ]
 
 export const hobbies = [
     {
         id: 1,
         name: "learning wacky things"
+    },
+    {
+        id: 2,
+        name: "Collection of Marvel & DC Figures"
+    },
+    {
+        id: 3,
+        name: "Collection of Games of Different Plattforms"
+
+    },
+    {
+        id: 4,
+        name: "Collect and look for Limited Edition content"
+    },
+    {
+        id: 5,
+        name: "Plat Games (Achieve 100% Completition on games)"
+    },
+    {
+        id: 6,
+        name: "Play Good old games, Classics"
     }
 
     // collect figures of marvel,dc heores, games collectibles, find limited edition content, 100% games, play good old games, collect physical media, collect and read manga,collect and read comics, watch anime
@@ -351,7 +376,12 @@ export const musicTaste = [
             14: "Ojitos Lindos"
 
         },
+        listenedMinutes: 500,
 
+    },
+    {
+        id: 3,
+        artist: "Michael Jackson"
     }
 
     //Queen, Michael Jackson, Bad Bunny, Michael Giaccino, FROMSOFT OST (bb, DS3, ER)
@@ -360,16 +390,40 @@ export const musicTaste = [
 
 export const projects = [
     {
-        name: "jhonny",
-        description: "jhonnny2",
-        imgSource: "done",
+        name: "ICESI-Gym Backend",
+        description: "The first project of an integrated Full Stack Application, it features the database schema for the Gym application, the administration website made in Thymeleaf for User Data Management. The Backend Application is based in Java Springboot following it's layered architecture(JPA, Security, REST(Documented with OpenAPI), MVC)",
+        imgSource: "projects/icesigym.back.png",
         urlSource: "https://www.dokkandb.com"
     },
     {
-        name: "jhonny",
-        description: "jhonnny3",
-        imgSource: "done",
+        name: "Universitary Wellbeing",
+        description: "Integrated Project made for the Wellbeing department for ICESI University, it provides a rich user Experience allowing to register for activities/events/tournaments, manage the schedule with such and provides all the Wellbeing services into One Integrated web app. It is executed following SCRUM Methodology, enriched with software & database design documentation and featuring the use of the Django Framework, Contenarization in Docker,User driven testing with Selenium web driver, Relational Database deployed on Supabase and web application deployed on Render.",
+        imgSource: "projects/Integrator-universitary-Wellbeing.png",
         urlSource: "https://www.dokkandb.com"
+    },
+    {
+        name: "Sentiment Analyzer",
+        description: "Machine Learning Project using simple NNs for binary class Airline focused sentiment analysis.",
+        imgSource: "projects/sentiment-Analyzer-github.png",
+        urlSource: "",
+    },
+    {
+        name: "Chomsky KeY Patterns",
+        description: "Python project featuring Regular Expression use for pattern recognition, Automatons for Pattern Classification, Transducers for Breach Patching, CFG for syntax preservation for GOlang files.",
+        imgSource: "projects/chomsky.png",
+        urlSource: "",
+    },
+    {
+        name: "ICESI-Gym Frontend",
+        description: "Frontend Application based in React.js and Typescript ",
+        imgSource: "projects/icesi-gym-front.png",
+        urlSource: "",
+    },
+    {
+        name: "Multiple client hub",
+        description: "Web app Chat Application with functionalities such as Real-Time texting, Chat History, Audio recording and Calls between users and Group chats. It is based on ZeroC ICE(Observer Pattern) for Websockets Alike Implementation in Java and frontend SPA on dynamic Javascript.",
+        imgSource: "projects/multiple-client-hub.png",
+        urlSource: "",
     }
 
     //icesigym, pi1, sentiment, chomsky, multiple client hub, proyectoFinal front + back comp2

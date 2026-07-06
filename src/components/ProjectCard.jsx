@@ -10,16 +10,16 @@ export default function ProjectCard({imgSource, name, description, urlSource}) {
       <CardActionArea component="a" href={urlSource || "#"} target='blank' rel="noopener noreferrer" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', height: '100%' }}>
         <CardMedia
           component="img"
-          height="140"
+          height="160"
           image={imgSource}
           alt="projectGIT"
           sx={{ display: "block" }}
         />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: 'Inconsolata', fontWeight: 600}}>
             {name}
           </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Inconsolata', fontWeight: 'bold', fontStyle: 'italic' }}>
             {description}
           </Typography>
         </CardContent>

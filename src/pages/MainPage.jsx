@@ -1,6 +1,6 @@
 import { Container, Typography, Box, Card, Toolbar, GlobalStyles, CssBaseline, IconButton } from "@mui/material"
 import React from "react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Navbar from "../components/Navbar"
 import ProjectCard from "../components/ProjectCard"
 import { projects, hobbies, videogames, qualities, musicTaste, inspirations } from "../utils/data"
@@ -38,12 +38,55 @@ export default function MainPage(){
         return () => clearInterval(typingInterval); 
     }, []);
 
+    //better than using native webAPI setInterval, useRef cooks with the same logic for carrusel loop
+    const intervalRef = useRef(null);
+
+    const startCarousel = () => {
+        clearInterval(intervalRef.current);
+
+        intervalRef.current = setInterval(() => {
+            setIndex((prev) => (prev + 1) % videogames.length);
+        }, 3000);
+    };
+
+    useEffect(() => {
+        startCarousel();
+
+        return () => clearInterval(intervalRef.current);
+    }, []);
+
+    //old version very ineffective.
+    // useEffect(() => {
+    //     const carouselInterval = setInterval(() => {
+    //         setIndex((currentIndex) => (currentIndex + 1) % videogames.length);
+    //     }, 1000);
+
+    //     return () => clearInterval(carouselInterval);
+    // }, []);
+    //non loopable ver.
+    // useEffect(() => {
+    //     const carouselInterval = setInterval(() => {
+    //         setIndex((currentIndex) => {
+    //         if (currentIndex < videogames.length - 1) {
+    //             return currentIndex + 1;
+    //         }
+
+    //         clearInterval(carouselInterval);
+    //         return currentIndex;
+    //         });
+    //     }, 1000);
+
+    //     return () => clearInterval(carouselInterval);
+    // }, []);
+
     const next = () => {
         setIndex((prev) => (prev + 1) % videogames.length);
+        startCarousel()
     };
 
     const prev = () => {
         setIndex((prev) => (prev - 1 + videogames.length) % videogames.length);
+        startCarousel()
     };
 
     return(
@@ -68,9 +111,7 @@ export default function MainPage(){
                         '&::-webkit-scrollbar': {
                             display: 'none',
                         },
-                        // Hide scrollbar for IE and Edge
                         msOverflowStyle: 'none', 
-                        // Hide scrollbar for Firefox
                         scrollbarWidth: 'none', 
                     },
                 }}
@@ -135,7 +176,7 @@ export default function MainPage(){
                 </Typography>
                 <Box sx={{
                     position: "relative",
-                    height: 500,
+                    height: 600,
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
@@ -143,7 +184,10 @@ export default function MainPage(){
                     overflow: "hidden",
                 }}>
                     {videogames.map((videogame, i) =>{
-                        const offset = i -index
+                        const total = videogames.length;
+                        let offset = i - index;
+                        if (offset > total / 2) offset -= total;
+                        if (offset < -total / 2) offset += total;
 
                         return(
                             <Box
@@ -154,6 +198,15 @@ export default function MainPage(){
                                 
                                 transition: "0.5s ease",
                                 transformStyle: "preserve-3d",
+                                pointerEvents: offset === 0 ? "auto" : "none", //prevents actioning on not active cards
+
+                                //can work now looks good with proper values for scaling
+                                transform: `
+                                translateX(${offset * 180}px)
+                                scale(${offset === 0 ? 1 : 0.8})
+                                rotateY(${offset * 30}deg)
+                                `,
+
 
                                 // transform: `
                                 //     translateX(${offset * 160}px)
@@ -161,9 +214,9 @@ export default function MainPage(){
                                 //     rotateY(${offset * 35}deg)
                                 // `,
 
-                                opacity: Math.abs(offset) > 3 ? 0 : 1,
-                                zIndex: i === index ? 10 : 5 - Math.abs(offset),
-                                filter: i === index ? "none" : "brightness(0.6)",
+                                opacity: Math.abs(offset) > 2 ? 0 : 1,
+                                zIndex: 10 - Math.abs(offset),
+                                filter: offset === 0 ? "none" : "brightness(0.6)",
                                 }}
                             >
                                 <GameCard key={i} videogame={videogame}/>
@@ -173,14 +226,14 @@ export default function MainPage(){
                         
                     <IconButton
                         onClick={prev}
-                        sx={{ position: "absolute", left: 20, color: "white" }}
+                        sx={{ position: "absolute", left: 50, color: "white", zIndex: 1000 }}
                     >
                         <ArrowBackIcon />
                     </IconButton>
 
                     <IconButton
                         onClick={next}
-                        sx={{ position: "absolute", right: 20, color: "white" }}
+                        sx={{ position: "absolute", right: 50, color: "white", zIndex: 1000 }}
                     >
                         <ArrowForwardIcon />
                     </IconButton>
@@ -206,7 +259,7 @@ export default function MainPage(){
                     {/*I think I can map the list of projects in here and display correctly with some CSS rules, hardcoded list */}
                 </Box>
 
-                <Typography variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
+                <Typography id="contact" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
                     Contact Me and links!:
                 </Typography> 
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
