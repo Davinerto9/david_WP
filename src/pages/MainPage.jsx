@@ -3,7 +3,7 @@ import React from "react"
 import { useState, useEffect, useRef } from "react"
 import Navbar from "../components/Navbar"
 import ProjectCard from "../components/ProjectCard"
-import { projects, hobbies, videogames, qualities, musicTaste, inspirations } from "../utils/data"
+import { projects, videogames, inspirations } from "../utils/data"
 import LinkedInIcon from '@mui/icons-material/LinkedIn'; 
 import MailIcon from '@mui/icons-material/Mail';
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
@@ -11,7 +11,11 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import GameCard from "../components/GameCard"
-
+import InspirationsStrip from "../components/InspirationsStrip"
+import HobbiesGrid from "../components/HobbiesGrid"
+import MusicGrid from "../components/MusicGrid"
+import Section from "../components/Section"
+import AboutMe from "../components/AboutMe"
 //I dont know if it's correct to put Tech stack is toooooo much corporate crap, projects I think should stay...
 //Things in mind: Goku addition, wild effects, music, a super advanced NON corporate dashboard, something creative with transitions and stuff...
 
@@ -156,24 +160,19 @@ export default function MainPage(){
                 >
                     {displayedText}
                 </Typography>
-                <Typography id="me" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 600}}>
-                    Who am I?:
-                </Typography> 
-                <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)' }}>
-                    <Typography align="center"  sx={{fontFamily: 'Inconsolata', fontStyle: 'italic', fontWeight: 600}}>
-                        I am David, I am 21 years old and I am currently 3rd year of Computer Science as of now. This webpage represents who I am and what I have to offer, If you want to find out keep scrolling to know in depth!
-                        {/*qualities should go here but how do I put it here ??????? */}
-                    </Typography>
-                </Card>
-                <Typography id="inspirations" variant="h5" align="left" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
-                    My inspirations:
+                <Section index={1} title="Who am I?" tinted id="me">
+                    <AboutMe />
+                </Section>
+                <Typography align="center" variant="h4" sx={{fontFamily: 'Edu NSW ACT Cursive'}}>
+                    A little bit about Myself...
                 </Typography>
-                <Typography id="hobbies" variant="h5" align="right" sx={{scrollMarginTop: '100px'}}>
-                    My hobbies:
-                </Typography>
-                <Typography id="videoGames" variant="h5" align="left" sx={{fontFamily: 'Inconsolata',scrollMarginTop: '100px', fontWeight: 'bold'}}>
-                    My favorite games: 
-                </Typography>
+                <Section index={2} title="My Inspirations" id="inspirations">
+                    <InspirationsStrip data={inspirations}/>
+                </Section>
+                <Section index={3} title="My Hobbies" tinted id="hobbies">
+                    <HobbiesGrid />
+                </Section>
+                <Section index={4} title="My Favorite VideoGames" id="videoGames">
                 <Box sx={{
                     position: "relative",
                     height: 600,
@@ -206,14 +205,6 @@ export default function MainPage(){
                                 scale(${offset === 0 ? 1 : 0.8})
                                 rotateY(${offset * 30}deg)
                                 `,
-
-
-                                // transform: `
-                                //     translateX(${offset * 160}px)
-                                //     scale(${i === index ? 1 : 0.75})
-                                //     rotateY(${offset * 35}deg)
-                                // `,
-
                                 opacity: Math.abs(offset) > 2 ? 0 : 1,
                                 zIndex: 10 - Math.abs(offset),
                                 filter: offset === 0 ? "none" : "brightness(0.6)",
@@ -238,14 +229,11 @@ export default function MainPage(){
                         <ArrowForwardIcon />
                     </IconButton>
                 </Box>
-                <Typography id="music" variant="h5" align="right" sx={{fontFamily:'Montserrat, sans-serif', fontWeight: 800, scrollMarginTop: '100px'}}>
-                    My music Taste: 
-                </Typography>
-                <Typography id="projects" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
-                    Some Software Projects I am proud of designing/participating:
-                </Typography>
-                
-                
+                </Section>
+                <Section index={5} title="My Music taste" tinted id="music">
+                    <MusicGrid />
+                </Section>
+                <Section index={6} title="Some Software Projects I am proud of designing/participating" id="projects">
                 <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center", p: 2 }}>
                     {projects.map((project, i) => (
                         <ProjectCard 
@@ -258,10 +246,8 @@ export default function MainPage(){
                     ))}
                     {/*I think I can map the list of projects in here and display correctly with some CSS rules, hardcoded list */}
                 </Box>
-
-                <Typography id="contact" variant="h5" align="center" sx={{fontFamily: 'Inconsolata', scrollMarginTop: '100px', fontWeight: 'bold'}}>
-                    Contact Me and links!:
-                </Typography> 
+                </Section>
+                <Section index={7} title="My contact Information" tinted id="contact">
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
                     <IconButton component="a" target="blank" rel="noopener noreferrer" color="primary" href="https://www.linkedin.com/in/david-chicué-412475348/">
                         <LinkedInIcon fontSize="large"/>
@@ -290,6 +276,7 @@ export default function MainPage(){
                         <YouTubeIcon fontSize="large" color="#000000" />
                     </IconButton>
                 </Card>
+                </Section>
 
                 {/*Resume addition at the end (Maybe not very corporate)*/}
             </Container>

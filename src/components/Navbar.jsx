@@ -23,7 +23,7 @@ export default function Navbar(){
             <AppBar position='fixed' color='default' elevation={3}>
                 <Container maxWidth="lg">
                     <Toolbar disableGutters sx={{justifyContent: 'space-between'}}>
-                        <Typography variant='h6' sx={{fontWeight: 'bold', fontFamily: 'Consolas'}} component="div">
+                        <Typography variant='h6' sx={{fontWeight: 'bold', fontFamily: 'Inconsolata'}} component="div">
                             David Chicué
                         </Typography>
                         <Box sx={{

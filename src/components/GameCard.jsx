@@ -20,11 +20,18 @@ export default function GameCard({videogame}){
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 600,
+        width: {
+            xs: '90vw', 
+            sm: 600
+        },   
+        // RESPONSIVE PADDING: Smaller padding on mobile so content isn't squeezed
+        p: {
+            xs: 2.5,
+            sm: 4
+        },    
         bgcolor: theme.color,
         border: '2px solid #000',
         boxShadow: 24,
-        p: 4,
         border: theme.border,
         background: theme.background,
         color: "#fff",
@@ -44,7 +51,7 @@ export default function GameCard({videogame}){
             return (
                 <ul style={{ margin: "4px 0 0 20px", padding: 0 }}>
                     {value.map((item, index) => (
-                        <li key={index} style={{ fontSize: "0.9rem", color: "#ddd" }}>
+                        <li key={index} style={{ fontSize: "0.9rem", color: "#ddd", fontFamily: 'Inconsolata' }}>
                             {item}
                         </li>
                     ))}
@@ -89,15 +96,15 @@ export default function GameCard({videogame}){
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h5" component="h2" sx={{ fontFamily: 'Consolas', fontWeight: 'bold', mb: 2 }}>
+                    <Typography id="modal-modal-title" variant="h5" component="h2" sx={{ fontFamily: 'Inconsolata', fontWeight: 'bold', mb: 2 }}>
                         {videogame.name}
                     </Typography>
                     
                     <Box id="modal-modal-description">
                         {videogame.relevantData.map((item) => (
                             <Box key={item.label} sx={{ mb: 1.5 }}>
-                                <Typography component="div" variant="body1">
-                                    <strong style={{ color: '#87CEFA' }}>{item.label}:</strong>
+                                <Typography component="div" variant="body1" sx={{fontFamily: 'Inconsolata' }}>
+                                    <strong style={{ color: '#87CEFA'}}>{item.label}:</strong>
                                     {renderValue(item.value)}
                                 </Typography>
                             </Box>
