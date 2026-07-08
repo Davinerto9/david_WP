@@ -1,3 +1,14 @@
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import SportsMartialArtsIcon from "@mui/icons-material/SportsMartialArts";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import Inventory2Icon from "@mui/icons-material/Inventory2";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import TvIcon from "@mui/icons-material/Tv";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import BoltIcon from "@mui/icons-material/Bolt";
+import AnimationIcon from "@mui/icons-material/Animation";
+import CodeIcon from "@mui/icons-material/Code";
+
 //add some legend on each part or sum idk
 export const videogames = [
     {
@@ -9,6 +20,9 @@ export const videogames = [
         { label: "Completion", value: "100%" },
         { label: "Favorite Weapon", value: "Super Shotgun" },
         { label: "Favorite OST", value: "The Only Thing They Fear Is You" },
+        { label: "Favorite Demon", value: "Tyrant"},
+        { label: "Best Level", value: "THE GREAT CITY OF Taras Nabad"},
+        { label: "Best Chain Combo", value: "Super Shotgun + Aeroblast"}
         ],
     },
     {
@@ -358,9 +372,9 @@ export const inspirations = [
         name: "Peter Parker/Spider-Man",
         img: "inspirations/spidey.jpg",
         series: "The Amazing Spider-Man",
-        creator: "Stan Lee",
+        creator: "Stan Lee/Jack Kirby/Steve Ditko",
         accent: "#ff0505",
-        greatestQuote: "Great Power Comes With Great Responsability (Ben Parker)"
+        greatestQuote: "Hope you were watching, Uncle Ben. 'Cause I did that for you. Kept everyone safe. Kept them from being scared. And I made it fun. It doesn't matter that most of 'em wouldn't have lifted a finger for Peter Parker. That's not why you do it. You do it 'cause it's the right thing to do. Because it's what you would've done. You were more than a father to me, Ben Parker. More than a role model... You were my hero. Now it's my turn. Because from now on, I'm going to be yours! You'll see. I'm going to give it my all! We'll have fun! I'll never quit--and it's going to be amazing!. -With Great Power Comes With Great Responsability (Ben Parker)"
     },
     {
         id: 8,
@@ -370,6 +384,42 @@ export const inspirations = [
         creator: "Koyoharu Gotouge",
         accent: "#dc5309",
         greatestQuote: "If you are feeling disheartened, that you are somehow not enough, set your heart ablaze. Dry your eyes and look ahead. You may feel like digging your heels in, but the flow of time waits for no one. It won't patiently stand by as you grieve.(炎)"
+    },
+    {
+        id: 9,
+        name: "Naruto Uzumaki",
+        img: "inspirations/naruto.jpg",
+        series: "NARUTO/NARUTO SHIPPUDEN",
+        creator: "Masashi Kishimoto",
+        accent: "#ff5900",
+        greatestQuote: " I'm not gonna run away, I never go back on my word! That's my nindō: my ninja way!. It's almost unbearable, isn't it… the pain of being all alone. I know that feeling; I've been there, in that dark and lonely place, but now there are others, other people who mean a lot to me. I care more about them than I do myself, and I won't let anyone hurt them. That's why I'll never give up. I will stop you, even if I have to kill you! They saved me from myself. They rescued me from my loneliness. They were the first to accept me as who I am. They're my friends.",
+    },
+    {
+        id: 10,
+        name: "Jhonatan Joestar",
+        img: "inspirations/jojo.jpg",
+        series: "Jojo's Bizarre Adventure",
+        creator: "Hiroiko Araki",
+        accent: "#08025e",
+        greatestQuote: "I strive to be a true gentleman! There are times when a gentleman has to be courageous and fight, even when his opponent is bigger than he is and he knows he's going to lose! (ぼくは本当の紳士をめざしているからだ！相手が大きいヤツだからって負けるとわかっているからって紳士は勇気を持って戦わなくてはならない時があるからだぞッ！！)",
+    },
+    {
+        id: 11,
+        name: "Eren Yeager",
+        img: "inspirations/eren.jpg",
+        series: "Attack on Titan",
+        creator: "Hajime Isayama",
+        accent: "#743a18",
+        greatestQuote: ["We’re born free. All of us. Some don’t believe it, some try to take it away. To hell with them! …Fight to live, risk it all for even a glimmer of real freedom! It doesn’t matter what’s waiting outside the gate, or what comes in! It doesn’t matter how cruel the world can be, or how unjust! Fight. Fight. Fight. FIGHT!", " -There’s nothing further removed from freedom than ignorance."]
+    },
+    {
+        id: 12,
+        name: "Bruce Wayne/The Batman",
+        img: "inspirations/batman.jpg",
+        series: "The Batman",
+        creator: "Bob Kane/Bill Finger",
+        accent: "#000000",
+        greatestQuote: "I'm starting to see now. I have had an effect here, but not the one I intended. Vengeance won't change the past, mine or anyone else's. I have to become more. People need hope, to know someone's out there for them. The city's angry, scarred, like me. Our scars can destroy us, even after the physical wounds have healed. But if we survive them, they can transform us. They can give us the power... to endure, and the strength to fight."
     }
     //yuji itadori, asta, son goku, subaru, future gohan, 
     // Personalized component that highlights the image layer with their most important quote in italics
@@ -378,54 +428,64 @@ export const inspirations = [
 
 export const hobbies = [
     {
-        id: 1,
-        name: "learning wacky things"
+        id: 1, name: "Learning wacky things", treatment: "default", icon: PsychologyIcon,
+        blurb: "I chase down random rabbit holes — obscure tech, weird history, how things work under the hood.",
+        detail: "If something makes me go 'wait, how does that work?', I lose an evening to it. It's how half my coding knowledge got started.",
     },
     {
-        id: 2,
-        name: "Collection of Marvel & DC Figures"
+        id: 2, name: "Marvel & DC Figures", treatment: "limited", icon: SportsMartialArtsIcon,
+        blurb: "A growing shelf of Marvel and DC figures.",
+        detail: "Favorites so far: The Amazing Spider-Man (Marvel). I go for dynamic poses over boxed-and-mint — they're meant to be seen.",
+        stat: "Figures owned: [n]",
     },
     {
-        id: 3,
-        name: "Collection of Games of Different Plattforms"
-
+        id: 3, name: "Games Across Platforms", treatment: "default", icon: SportsEsportsIcon,
+        blurb: "PC, PlayStation, Nintendo, retro — I don't do console wars.",
+        detail: "Good games are good games. I bounce between platforms depending on what's worth playing.",
     },
     {
-        id: 4,
-        name: "Collect and look for Limited Edition content"
+        id: 4, name: "Limited Edition Hunting", treatment: "limited", icon: Inventory2Icon,
+        blurb: "Tracking down limited-edition releases and collector's boxes.",
+        detail: "The thrill is in the hunt — finding the rare version before it's gone or scalped into orbit.",
+        stat: "Best find: Avatar the last airbender BOOK 2 DVD Retailer",
+        interestingFact: "I would like to find and get Physical Rare DS games, 3DS games, Manga Limited Editions, Amiibos, Yo-Kai Watches"
     },
     {
-        id: 5,
-        name: "Plat Games (Achieve 100% Completition on games)",
-        treatment: "shine"
+        id: 5, name: "Platinuming Games (100%)", treatment: "shine", icon: EmojiEventsIcon,
+        blurb: "Chasing that 100% completion — every trophy, every achievement.",
+        detail: "There's a specific satisfaction in the platinum ping. Toughest one I've earned: [Elden Ring].",
+        stat: "Platinums: 7",
     },
     {
-        id: 6,
-        name: "Play Good old games, Classics"
+        id: 6, name: "Classic / Retro Games", treatment: "vintage", icon: TvIcon,
+        blurb: "Going back to the classics that hold up.",
+        detail: "Old games taught design without hand-holding. I keep coming back to: [Sonic The Hedhehog 2, LEGO StarWars The Complete Saga, Duke Nukem Manhattan Project].",
     },
     {
-        id: 7,
-        name: "Collect and Read Manga"
+        id: 7, name: "Collecting & Reading Manga", treatment: "manga", icon: MenuBookIcon,
+        blurb: "A physical manga shelf that keeps outgrowing itself.",
+        detail: "Currently reading: DAN DA DAN. I prefer physical volumes — the paper, the shelf, the whole ritual.",
+        stat: "Volumes: 8",
     },
     {
-        id:8,
-        name: "Collect and Read Marvel & DC Comics"
+        id: 8, name: "Marvel & DC Comics", treatment: "comic", icon: BoltIcon,
+        blurb: "Collecting and reading Marvel and DC runs.",
+        detail: "Favorite run: [Batman The Dark Knight Returns, The Killing Joke]. Single issues and trades both — I'm not picky about format.",
     },
     {
-        id: 9,
-        name: "Watch Anime",
-        data: [
-            {label: "Favorite Anime Shows", value: {1: "Black Clover"}}
-        ]
+        id: 9, name: "Watching Anime", treatment: "default", icon: AnimationIcon,
+        blurb: "Always mid-way through at least one series.",
+        detail: "All-time favorites: [add yours]. My inspirations section is basically a love letter to some of these.",
     },
     {
-        id: 10,
-        name: "Code really wacky projects."
-    }
+        id: 10, name: "Coding Wacky Projects", treatment: "default", icon: CodeIcon,
+        blurb: "Building strange, fun things — like this very page.",
+        detail: "The weirder the idea, the more I want to build it. This site is exhibit A.",
+    },
+];
 
     // collect figures of marvel,dc heores, games collectibles, find limited edition content, 100% games, play good old games, collect physical media, collect and read manga,collect and read comics, watch anime
     // A component that is styled according to the main attractive of each hobby. (100% a shiny effect like the steam one (or LR gif shine), read manga a black and white component, a stripe type component for comics, old games a vintage/tv component, limited edition a bigger component like those LE boxes, anime idk )
-]
 
 export const musicTaste = [
     {
@@ -445,7 +505,7 @@ export const musicTaste = [
             10: "Keep Yourself Alive",
             11: "I Want to Break Free"
         },
-        listenedMinutes: 1000,
+        listenedMinutes: 8900,
         topTrack : 5,
         accent: "#e8b923",
     },
@@ -470,7 +530,7 @@ export const musicTaste = [
             14: "Ojitos Lindos"
 
         },
-        listenedMinutes: 500,
+        listenedMinutes: 3700,
         topTrack: 3,
         accent: "#84cc16"
 
@@ -492,12 +552,12 @@ export const musicTaste = [
             10: "Going back to Indiana + Jackson's 5"
 
         },
-        listenedMinutes: 900,
+        listenedMinutes: 1900,
         topTrack: 1,
         accent: "#6a3f87",
     },
     {
-        id: 5,
+        id: 4,
         artist: "FROMSOFTWARE Sound Team",
         img: "music/fromsoft.jpg",
         favTrackList: {
@@ -512,12 +572,12 @@ export const musicTaste = [
             9: "Mesmer the Impaler",
             10: "Ludwig, the Holy Blade"
         },
-        listenedMinutes: 9000,
+        listenedMinutes: 3000,
         topTrack: 1,
         accent: "#ea580c",
     },
     {
-        id: 6,
+        id: 5,
         artist: "Fujii Kaze",
         img: "music/fujii.jpg",
         favTrackList: {
@@ -534,8 +594,24 @@ export const musicTaste = [
             11: "Just the Two of Us (Fujii Kaze Ver.)"
         },
         topTrack: 11,
-        listenedMinutes: 1000,
+        listenedMinutes: 5500,
         accent: "#7291bc",
+
+    },
+    {
+        id: 6,
+        artist: "Crush40",
+        img: "music/crush40.jpg",
+        favTrackList: {
+            1: "Live and Learn",
+            2: "Knight of the Wind",
+            3: "I Am... All of me",
+            4: "Open Your Heart",
+            5: "What I'm Made Of..."
+        },
+        topTrack: 2,
+        listenedMinutes: 5000,
+        accent: "#c13790",
 
     }
 

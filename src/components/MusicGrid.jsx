@@ -68,7 +68,8 @@ export default function MusicGrid() {
                 slotProps={{
                     paper: {sx: { //yeah I make IT WORK
                         borderRadius: 3,
-                        overflow: "hidden",
+                        overflowX: "hidden",
+                        overflowY: "auto",
                         // modal tints to the artist's color
                         background: selected
                             ? `linear-gradient(160deg, ${selected.accent}ee 0%, #1a1a1a 90%)`
@@ -77,7 +78,14 @@ export default function MusicGrid() {
                 }}
             >
                 {selected && (
-                    <DialogContent sx={{ color: "#fff" }}>
+                    <DialogContent sx={{ color: "#fff", 
+                        "&::-webkit-scrollbar": {
+                            display: 'none'
+                        },
+                        msOverflowStyle: 'none', 
+                        scrollbarWidth: 'none',
+                        WebkitOverflowScrolling: "touch",  
+                    }}>
                         <Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 2 }}>
                             <Box
                                 component="img"
