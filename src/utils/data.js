@@ -392,7 +392,7 @@ export const inspirations = [
         series: "NARUTO/NARUTO SHIPPUDEN",
         creator: "Masashi Kishimoto",
         accent: "#ff5900",
-        greatestQuote: " I'm not gonna run away, I never go back on my word! That's my nindō: my ninja way!. It's almost unbearable, isn't it… the pain of being all alone. I know that feeling; I've been there, in that dark and lonely place, but now there are others, other people who mean a lot to me. I care more about them than I do myself, and I won't let anyone hurt them. That's why I'll never give up. I will stop you, even if I have to kill you! They saved me from myself. They rescued me from my loneliness. They were the first to accept me as who I am. They're my friends.",
+        greatestQuote: " I'm not gonna run away, I never go back on my word! That's my nindō(忍道): my ninja way!. It's almost unbearable, isn't it… the pain of being all alone. I know that feeling; I've been there, in that dark and lonely place, but now there are others, other people who mean a lot to me. I care more about them than I do myself, and I won't let anyone hurt them. That's why I'll never give up. I will stop you, even if I have to kill you! They saved me from myself. They rescued me from my loneliness. They were the first to accept me as who I am. They're my friends.",
     },
     {
         id: 10,
@@ -428,59 +428,118 @@ export const inspirations = [
 
 export const hobbies = [
     {
-        id: 1, name: "Learning wacky things", treatment: "default", icon: PsychologyIcon,
-        blurb: "I chase down random rabbit holes — obscure tech, weird history, how things work under the hood.",
-        detail: "If something makes me go 'wait, how does that work?', I lose an evening to it. It's how half my coding knowledge got started.",
-    },
-    {
-        id: 2, name: "Marvel & DC Figures", treatment: "limited", icon: SportsMartialArtsIcon,
-        blurb: "A growing shelf of Marvel and DC figures.",
-        detail: "Favorites so far: The Amazing Spider-Man (Marvel). I go for dynamic poses over boxed-and-mint — they're meant to be seen.",
-        stat: "Figures owned: [n]",
-    },
-    {
-        id: 3, name: "Games Across Platforms", treatment: "default", icon: SportsEsportsIcon,
-        blurb: "PC, PlayStation, Nintendo, retro — I don't do console wars.",
-        detail: "Good games are good games. I bounce between platforms depending on what's worth playing.",
+        id: 5, name: "Platinuming Games (100%)", treatment: "shine", icon: EmojiEventsIcon,
+        span: { cols: 2, rows: 2 }, // hero tile — the shine deserves the space
+        blurb: "Every trophy, every achievement, the platinum ping.",
+        detail: "There's a specific satisfaction in a 100% completion. I chase the platinum even when the last trophy is miserable.",
+        stat: "Platinums: DOOM Eternal, ELDEN RING, Batman Arkham City, Batman Arkham Asylum, LEGO City Undercover, SONIC 4 I & II, DISTRAINT 1 & 2",
+        wishlist: ["Hardest earned: ELDEN RING", "Currently grinding: Batman Arkham Origins"],
     },
     {
         id: 4, name: "Limited Edition Hunting", treatment: "limited", icon: Inventory2Icon,
-        blurb: "Tracking down limited-edition releases and collector's boxes.",
-        detail: "The thrill is in the hunt — finding the rare version before it's gone or scalped into orbit.",
-        stat: "Best find: Avatar the last airbender BOOK 2 DVD Retailer",
-        interestingFact: "I would like to find and get Physical Rare DS games, 3DS games, Manga Limited Editions, Amiibos, Yo-Kai Watches"
+        span: { cols: 2, rows: 2 },
+        blurb: "Chasing rare releases before they're gone or scalped into orbit.",
+        detail: "The thrill is in the hunt.",
+        stat: "Best find: Avatar the Last Airbender Book 2 DVD (retailer ed.)",
+        wishlistLabel: "ON THE HUNT OF",
+        wishlist: [
+            "Rare physical DS & 3DS games",
+            "Manga limited editions",
+            "Amiibos",
+            "Hard Cover Comics (Limited Runs)",
+            "Yo-Kai Watch medals",
+            "Avatar the Last Airbender BOOK 1 & BOOK 3 DVD",
+            "Avatar the Last Airbender Comics(Need some)",
+            "Yo-kai Watch Dream",
+            "Yo-kai Watch Prototype U",
+            "PSP Red God Of War Edition",
+            "Wii- U",
+            "Good Old PS2",
+            "GameCube",
+            "XBOX og",
+            "PS4 with P.T(Kojima's Silent Hill)",
+            "Skylander Portal",
+            "LEGO Spider-Man 1:1 Scale Sets",
+            "LEGO SONIC & LEGO MARIO",
+            "Nintendo DS Lite Red",
+            "GBA Original game cartridges",
+            "NES Classic Edition",
+            "New Nintendo 3DS",
+
+        ],
     },
     {
-        id: 5, name: "Platinuming Games (100%)", treatment: "shine", icon: EmojiEventsIcon,
-        blurb: "Chasing that 100% completion — every trophy, every achievement.",
-        detail: "There's a specific satisfaction in the platinum ping. Toughest one I've earned: [Elden Ring].",
-        stat: "Platinums: 7",
-    },
-    {
-        id: 6, name: "Classic / Retro Games", treatment: "vintage", icon: TvIcon,
-        blurb: "Going back to the classics that hold up.",
-        detail: "Old games taught design without hand-holding. I keep coming back to: [Sonic The Hedhehog 2, LEGO StarWars The Complete Saga, Duke Nukem Manhattan Project].",
-    },
-    {
-        id: 7, name: "Collecting & Reading Manga", treatment: "manga", icon: MenuBookIcon,
-        blurb: "A physical manga shelf that keeps outgrowing itself.",
-        detail: "Currently reading: DAN DA DAN. I prefer physical volumes — the paper, the shelf, the whole ritual.",
-        stat: "Volumes: 8",
+        id: 7, name: "Manga Collecting", treatment: "manga", icon: MenuBookIcon,
+        span: { cols: 1, rows: 2 },
+        blurb: "A physical shelf that keeps outgrowing itself.",
+        detail: "I prefer physical volumes — the paper, the shelf, the ritual and the corky stuff with volumes.",
+        stat: "On Possesion: [The Seven Deadly Sins Vol. 1-5,13], [Assasination Classroom Vol.6,7,9,13], [The Quintessential Quintuplets Vol.1], [Black Clover Vol.24]",
+        wishlist: ["Reading now: Smiley", "Want to record: GANTZ, Oyasumi Pun Pun,Berkserk, JJK,Demon Slayer, Dragon Ball"],
     },
     {
         id: 8, name: "Marvel & DC Comics", treatment: "comic", icon: BoltIcon,
-        blurb: "Collecting and reading Marvel and DC runs.",
-        detail: "Favorite run: [Batman The Dark Knight Returns, The Killing Joke]. Single issues and trades both — I'm not picky about format.",
+        span: { cols: 2, rows: 1 },
+        blurb: "Collecting and reading runs, singles and trades.",
+        detail: "Comics are endless, there are like 9k branches and variants of stories of our favorite heroes.",
+        stat: "On Possesion: [DC's Collection of Villains & Heroes: Batman - I am Gotham, Harley Quinn - Heat In the City, Eternal Wickedness, Superman-The Son of Superman, Joker - The Devil's Attorney, Batman - I, My Worst Enemy, Infinite Crysis- OMAC Project, Joker- Asylum Vol.1], Spider-Man's Complete Guide",
+        wishlistLabel: "PRIORITY",
+        wishlist: ["Batman The Dark Knight Returns", "Batman: The Killing Joke", "Marvel Zombies full RUN", "Spider-Man: Back In Black", "Spider-Man: Brand New Day", "Crysis On Infinite Earths", "Old Man Logan", "Marvel's: Infinity War", "Secret Wars", "Spider-Verse FULL RUN"]
+
     },
     {
-        id: 9, name: "Watching Anime", treatment: "default", icon: AnimationIcon,
+        id: 6, name: "Retro Games", treatment: "vintage", icon: TvIcon,
+        span: { cols: 1, rows: 2 },
+        blurb: "The classics that still hold up.",
+        detail: "Retro games, must be preserved and remembered for the bases of what we have today.",
+        stat: "Retro Faves: Pokémon Emerald, Spider-man 2, PvZ, Sonic The Hedhehog 2, Duke Nukem Manhattan Project, The Legend of Zelda Ocarina of Time",
+        wishlistLabel: "MUST PLAY",
+        wishlist: ["Pokémon Platinum", "Spider-Man Shattered Dimensions", "Spider-man Edge of Time", "Resident Evil 4", "Silent Hill 2", "MarioKart DS", "Super Mario 64",  "Pokémon Heartgold/Soulsilver","The Legend of Zelda Ocarina of Time","The Legend of Zelda Majora's Mask", "Warioland", "Super Mario Sunshine", "Sonic Adventure 2"]
+
+    },
+    {
+        id: 3, name: "Games Across Platforms", treatment: "console", icon: SportsEsportsIcon,
+        span: { cols: 1, rows: 2 },
+        blurb: "PC, PlayStation, Nintendo, retro — no console wars.",
+        detail: "PC mogs every console sorry point blank it's just to damn powerful",
+        stat: "Main Rig: PC Master Race",
+        wishlistLabel: "IN THE ROTATION",
+        wishlist: ["STEAM everything","Switch - Games on the Go","PlayStation should be here but since Physical Media is Gone F***K SONY"]
+    },
+    {
+        id: 9, name: "Anime", treatment: "anime", icon: AnimationIcon,
+        span: { cols: 1, rows: 2 },
         blurb: "Always mid-way through at least one series.",
-        detail: "All-time favorites: [add yours]. My inspirations section is basically a love letter to some of these.",
+        detail: "Where a lot of my inspirations come from — my inspirations section is basically a love letter to a few of these. There's always one show I'm caught up on and three I'm behind on.",
+        stat: "Currently Watching: Re: Zero S3",
+        wishlistLabel: "FAVORITE SHOWS",
+        wishlist: ["Black Clover", "Dragon Ball", "Jujutsu Kaisen", "DAN DA DAN", "Demon Slayer", "Re:Zero", "Attack on Titan", "Naruto Shippuden", "Chainsaw Man", "The Quintessential Quintuplets", "Jojo's Bizarre Adventure", "The Seven Deadly Sins", "Four Knights of the Apocalypse", "Devilman Crybaby", "Cyberpunk Edgerunners"]
     },
     {
-        id: 10, name: "Coding Wacky Projects", treatment: "default", icon: CodeIcon,
-        blurb: "Building strange, fun things — like this very page.",
-        detail: "The weirder the idea, the more I want to build it. This site is exhibit A.",
+        id: 2, name: "Comic Heroes, Game, Anime Figures", treatment: "limited", icon: SportsMartialArtsIcon,
+        span: { cols: 1, rows: 2 },
+        blurb: "A shelf of dynamic-pose figures.",
+        detail: "My goal is to have one of those HOT TOYS big shots and those 1/6 Figures ",
+        stat: "I have SSJ3 Vegito, Waluigi, Mr.Game & Watch, Duck Hunt Duo, R.O.B",
+        wishlistLabel: "WISHLIST",
+        wishlist: ["Doom Slayer Figure", "Soul of Cinder Figure", "Slave Knight Gael Figure", "SSJ Namek Goku Figure", "Full Power Frieza Figure", "Majin Vegeta Figure", "Blue Gogeta & Vegetto Figure", "Super Saiyan 4 Gogeta Figure", "Devil Union Asta Figure", "Assault Mode Meliodas Figure", "Black Suit Spiderman Figure", "Infinity Gauntlet Figure", "Sun Breathing Tanjiro Figure", "MUI Goku Figure", "Goku vs Kid Buu Genkidama figure", "Super Sonic Figure with Chaos Emeralds", "Sonic Amiibo"]
+    },
+    {
+        id: 10, name: "Coding Wacky Projects", treatment: "terminal", icon: CodeIcon,
+        span: { cols: 1, rows: 2 },
+        blurb: "Strange, fun builds — like this page.",
+        detail: "My favorite stack to learn and play with:",
+        stat: "Springboot(Java), Typescript/JavaScript (React.js), Python(TF, Qt6)",
+        wishlistLabel: "Wish to learn:",
+        wishlist: ["C++", "C", "Rust", "Golang", "Vim/NeoVim"]
+    },
+    {
+        id: 1, name: "Learning wacky things", treatment: "wacky", icon: PsychologyIcon,
+        span: { cols: 2, rows: 1 },
+        blurb: "Random rabbit holes, obscure tech, how things work.",
+        detail: "Youtube is one of the biggest rabbit hole inducer if it goes solo...",
+        stat: "Wackiest Things learnt: Psychology behind 'Instagram People', AI Roadmap and the huge statements from their unhinged developers(Like New Dominant Race, Dystopian World, Breakout etc), LinkedIn Joke of a Rabbithole",
+        wishlistLabel: "Interesting things to learn:",
+        wishlist: ["How to build a Black hole simulator on C++", "Wi-fi Decrypter", "How to code an OS", "How to build Git and Docker", "How to build my own Server", "Secrets of Linux Distributions and Commands(Stuff like that)"],
     },
 ];
 
@@ -503,7 +562,10 @@ export const musicTaste = [
             8: "My Melancholy Blues",
             9: "Flash",
             10: "Keep Yourself Alive",
-            11: "I Want to Break Free"
+            11: "I Want to Break Free",
+            12: "Spread Your Wings",
+            13: "Seven Seas of Rhye",
+            14: "Teo Toriatte (てをとりあっ て)"
         },
         listenedMinutes: 8900,
         topTrack : 5,
@@ -549,7 +611,8 @@ export const musicTaste = [
             7: "Remember the Time",
             8: "Thriller",
             9: "The Way You Make Me Feel",
-            10: "Going back to Indiana + Jackson's 5"
+            10: "Going back to Indiana + Jackson's 5",
+            11: "I want you back + Jackson's 5"
 
         },
         listenedMinutes: 1900,

@@ -21,7 +21,7 @@ export default function AboutMe() {
                 }}
             >
                 <Typography sx={{ fontFamily: "Inconsolata", fontStyle: "italic", fontWeight: 600, fontSize: 17, lineHeight: 1.7 }}>
-                    I am David, 21, currently in my 3rd year of Computer Science. This page is who
+                    I am David, 21, currently in my 3rd year of Computer Science. This page is a bit of who
                     I am and and a little of what my powers and I can bring to the table — I built the whole thing in React to show, not just tell.
                     Keep scrolling.
                 </Typography>

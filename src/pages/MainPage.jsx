@@ -166,10 +166,10 @@ export default function MainPage(){
                 <Typography align="center" variant="h4" sx={{fontFamily: 'Edu NSW ACT Cursive'}}>
                     A little bit about Myself...
                 </Typography>
-                <Section index={2} title="My Inspirations" id="inspirations">
+                <Section index={2} title="My Inspirations" id="inspirations"  intro="Role models I've built a big part of my personality around — for their efficiency and their impact on their respective works.">
                     <InspirationsStrip data={inspirations}/>
                 </Section>
-                <Section index={3} title="My Hobbies" tinted id="hobbies">
+                <Section index={3} title="My Hobbies" tinted id="hobbies" intro="What I do with my free time — and the burning passion behind it.">
                     <HobbiesGrid />
                 </Section>
                 <Section index={4} title="My Favorite VideoGames" id="videoGames">
@@ -247,7 +247,7 @@ export default function MainPage(){
                     {/*I think I can map the list of projects in here and display correctly with some CSS rules, hardcoded list */}
                 </Box>
                 </Section>
-                <Section index={7} title="My contact Information" tinted id="contact">
+                <Section index={7} title="My contact Information" tinted id="contact" intro="If you like what you see or just want to match on socials feel free to reach out!">
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
                     <IconButton component="a" target="blank" rel="noopener noreferrer" color="primary" href="https://www.linkedin.com/in/david-chicué-412475348/">
                         <LinkedInIcon fontSize="large"/>
