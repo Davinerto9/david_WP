@@ -48,7 +48,6 @@ export default function InspirationsStrip({ data = [] }) {
                                 onMouseEnter={() => setActive(p.id)}
                                 sx={{
                                     position: "relative",
-                                    // Maintained your smooth accordion logic per row
                                     flex: isActive ? 4 : 1, 
                                     minHeight: { xs: isActive ? 260 : 80, md: "auto" },
                                     borderRadius: 3,

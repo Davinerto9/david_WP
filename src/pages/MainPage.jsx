@@ -257,7 +257,7 @@ export default function MainPage(){
                         component="a"
                         href="mailto:davinerto9@gmail.com"
                     >
-                        <MailIcon fontSize="large" color="#000000" />
+                        <MailIcon fontSize="large"/>
                     </IconButton>
                     <IconButton
                         component="a"
@@ -265,7 +265,7 @@ export default function MainPage(){
                         rel="noopener noreferrer"
                         href="https://steamcommunity.com/id/lorddavidwiii/"
                     >
-                        <VideogameAssetIcon fontSize="large" color="#000000" />
+                        <VideogameAssetIcon fontSize="large"/>
                     </IconButton>
                     <IconButton
                         component="a"
@@ -273,7 +273,7 @@ export default function MainPage(){
                         rel="noopener noreferrer"
                         href="https://www.youtube.com/@printlnDavid"
                     >
-                        <YouTubeIcon fontSize="large" color="#000000" />
+                        <YouTubeIcon fontSize="large"/>
                     </IconButton>
                 </Card>
                 </Section>
