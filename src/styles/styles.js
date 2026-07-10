@@ -46,12 +46,12 @@ export const crossBeamFlicker = keyframes`
 `;
 
 // Pulse for the spiky yellow aura shape. Same rule: no translate, since the
-// centering is handled by a static wrapper.
-export const spikyAuraPulse = keyframes`
-  0% { opacity: 0.55; transform: scale(0.95) rotate(-1deg); }
-  50% { opacity: 0.95; transform: scale(1.07) rotate(1deg); }
-  100% { opacity: 0.55; transform: scale(0.95) rotate(-1deg); }
-`;
+// centering is handled by a static wrapper. (NOT USED)
+// export const spikyAuraPulse = keyframes`
+//   0% { opacity: 0.55; transform: scale(0.95) rotate(-1deg); }
+//   50% { opacity: 0.95; transform: scale(1.07) rotate(1deg); }
+//   100% { opacity: 0.55; transform: scale(0.95) rotate(-1deg); }
+// `;
 
 // Continuous rotation for the ring of cross-beam flares around the orb.
 export const flareSpin = keyframes`
