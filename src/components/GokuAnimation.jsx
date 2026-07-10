@@ -8,7 +8,7 @@ import {
   brushStrokeMove,
   bgColorShift,
   crossBeamFlicker,
-  spikyAuraPulse,
+  // spikyAuraPulse,
   flareSpin,
   shakeCharge,
 } from '../styles/styles';
