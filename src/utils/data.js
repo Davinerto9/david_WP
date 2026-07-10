@@ -685,37 +685,37 @@ export const musicTaste = [
 export const projects = [
     {
         name: "ICESI-Gym Backend",
-        description: "The first project of an integrated Full Stack Application, it features the database schema for the Gym application, the administration website made in Thymeleaf for User Data Management. The Backend Application is based in Java Springboot following it's layered architecture(JPA, Security, REST(Documented with OpenAPI), MVC)",
+        description: "The engine behind a fitness platform for ICESI University — a place for students and staff to build workout routines, track their progress over time, and get feedback from certified trainers. I designed the database and built the backend in Java Spring Boot: institutional login with role-based access (user, trainer, admin), an exercise library with types and demo videos, progress tracking with performance stats, and a Thymeleaf admin panel for managing trainers and content. Real-time event notifications run over websockets. My first time owning a backend end to end, for something people would actually use.",
         imgSource: "projects/icesigym.back.png",
-        urlSource: ""
+        urlSource: "https://github.com/Davinerto9/ICESI-Gym-Backend"
     },
     {
-        name: "Universitary Wellbeing",
-        description: "Integrated Project made for the Wellbeing department for ICESI University, it provides a rich user Experience allowing to register for activities/events/tournaments, manage the schedule with such and provides all the Wellbeing services into One Integrated web app. It is executed following SCRUM Methodology, enriched with software & database design documentation and featuring the use of the Django Framework, Contenarization in Docker,User driven testing with Selenium web driver, Relational Database deployed on Supabase and web application deployed on Render.",
+        name: "University Wellbeing Platform",
+        description: "A full integrated web app built for ICESI University's Wellbeing department, bringing all their services into one place — students can register for activities, events, and tournaments and manage their schedules around them. Built with Django under a real SCRUM process, containerized with Docker, tested end-to-end with Selenium, backed by a relational database on Supabase, and deployed on Render. The closest thing to shipping real production software I've done.",
         imgSource: "projects/Integrator-universitary-Wellbeing.png",
         urlSource: "https://github.com/ICESI-PI1-202502/20252-g3-pi1-t3"
     },
     {
-        name: "Sentiment Analyzer",
-        description: "Machine Learning Project using simple Neural Networks for binary class Airline focused sentiment analysis.",
+        name: "Airline Sentiment Analyzer",
+        description: "A machine learning project that classifies airline customer feedback as positive or negative, built from a simple neural network for binary sentiment analysis. My entry point into applied ML — turning raw text into a model that actually predicts.",
         imgSource: "projects/sentiment-Analyzer-github.png",
-        urlSource: "",
+        urlSource: "https://github.com/Davinerto9/Airline-Sentiment-Analysis",
     },
     {
-        name: "Chomsky KeY Patterns",
-        description: "Python project featuring Regular Expression use for pattern recognition, Automatons for Pattern Classification, Transducers for Breach Patching, CFG for syntax preservation for GOlang files.",
+        name: "Chomsky — Code Hazard Analyzer",
+        description: "A static analysis tool for Go source files, named for the syntax theory behind it. It uses regular expressions to spot risky patterns, automatons to classify them, transducers to auto-patch breaches, and a context-free grammar to keep the file's syntax intact through the fix. Easily the most theory-heavy thing I've built — formal language concepts turned into a working tool.",
         imgSource: "projects/chomsky.png",
-        urlSource: "",
+        urlSource: "https://github.com/Davinerto9/Chomsky-Code-Hazard-Analyzer",
     },
     {
         name: "ICESI-Gym Frontend",
-        description: "Frontend Application based in React.js and Typescript featuring Redux for Global state management, Websockets STOMP/SockJS for Real Time Operations, husky webhooks. ",
+        description: "The interface students and trainers actually use — the React + TypeScript client for the gym platform above. Users create and log routines, watch their progress build up in charts, and pull personal PDF reports; trainers review assigned users and push recommendations. Built with Redux for global state, STOMP/SockJS websockets for the real-time notifications and trainer alerts, and a responsive layout that works on phone and desktop. Where I got comfortable with typed React and live data.",
         imgSource: "projects/icesi-gym-front.png",
-        urlSource: "",
+        urlSource: "https://github.com/Davinerto9/ICESI-Gym-Frontend",
     },
     {
-        name: "Multiple client hub",
-        description: "Web app Chat Application with functionalities such as Real-Time texting, Chat History, Audio recording and Calls between users and Group chats. It is based on ZeroC ICE(Observer Pattern) for Websockets Alike Implementation in Java and frontend SPA on dynamic Javascript.",
+        name: "Multiple Client Hub",
+        description: "A full chat application with real-time messaging, chat history, audio recording, voice calls, and group chats. The real-time layer runs on ZeroC ICE using the Observer pattern for a websocket-style backend in Java, with a single-page frontend in vanilla JavaScript. Building the live communication layer from the pattern up was the fun part.",
         imgSource: "projects/multiple-client-hub.png",
         urlSource: "https://github.com/Davinerto9/multiple-client-hub",
     }
