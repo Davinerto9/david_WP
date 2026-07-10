@@ -249,7 +249,7 @@ export default function MainPage(){
                 </Section>
                 <Section index={7} title="My contact Information" tinted id="contact" intro="If you like what you see or just want to match on socials feel free to reach out!">
                 <Card sx={{ p: 2, backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(10px)', justifySelf:'center'}}>
-                    <IconButton component="a" target="blank" rel="noopener noreferrer" color="primary" href="https://www.linkedin.com/in/david-chicué-412475348/">
+                    <IconButton component="a" target="_blank" rel="noopener noreferrer" color="primary" href="https://www.linkedin.com/in/david-chicué-412475348/">
                         <LinkedInIcon fontSize="large"/>
                     </IconButton>
                     
